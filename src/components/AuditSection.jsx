@@ -66,28 +66,28 @@ const AuditSection = () => {
         />
         <StatBox 
           title="Total farts tolerated:" 
-          value="BIOLOGICAL HAZARD" 
+          value="BIO HAZARD" 
           color="yellow" 
           rotation={-2} 
           delay={0.5} 
         />
         <StatBox 
           title="Weird TikToks you forced me to watch:" 
-          value="TOO MANY" 
+          value="67" 
           color="black-bg" 
           rotation={1} 
           delay={0.7} 
         />
         <StatBox 
           title="Brain cells lost deciding what to eat:" 
-          value="ALL OF THEM" 
+          value="0 LEFT" 
           color="white-bg" 
           rotation={-4} 
           delay={0.9} 
         />
         <StatBox 
           title="Days you were 'Tak Mandi':" 
-          value="WAY TOO MANY" 
+          value="42 DAYS" 
           color="cyan" 
           rotation={3} 
           delay={1.1} 

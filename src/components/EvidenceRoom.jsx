@@ -50,13 +50,6 @@ const EvidenceRoom = () => {
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'var(--pink-scream)', textShadow: '3px 3px 0px var(--white-pure)' }}>THE EVIDENCE ROOM</h2>
         <p style={{ fontSize: '1.2rem', marginTop: '1rem' }}>Drag the stickers to vandalize our memories. You know you want to.</p>
-        <button 
-          onClick={handleNuke}
-          className="brutal-button mt-4"
-          style={{ marginTop: '2rem' }}
-        >
-          NUKE IT
-        </button>
       </div>
 
       <div 
@@ -164,9 +157,20 @@ const EvidenceRoom = () => {
 
         </div>
 
+        {/* Nuke Button moved to bottom so it's seen after scrolling on mobile */}
+        <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+          <button 
+            onClick={handleNuke}
+            className="brutal-button"
+            style={{ fontSize: '2rem', padding: '1.5rem 4rem', backgroundColor: 'var(--pink-scream)' }}
+          >
+            NUKE IT
+          </button>
+        </div>
+
         {nuked && (
-          <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--pink-scream)', zIndex: 999 }}>
-            <h1 className="glitch-text text-black font-black" style={{ fontSize: '5rem' }}>BOOM.</h1>
+          <div style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--pink-scream)', zIndex: 99999 }}>
+            <h1 className="glitch-text text-black font-black shake-it" style={{ fontSize: 'clamp(4rem, 15vw, 8rem)' }}>BOOM.</h1>
           </div>
         )}
       </div>
