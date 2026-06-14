@@ -57,18 +57,18 @@ const Contract = () => {
         <h2 style={{ fontSize: '3rem', marginBottom: '2rem', textAlign: 'center', textDecoration: 'underline' }}>TERMS & CONDITIONS: YEAR 4</h2>
         
         <div style={{
-          backgroundColor: '#eee',
-          padding: '2rem',
+          backgroundColor: 'var(--white-pure)',
           border: 'var(--border-thick-black)',
-          height: '200px',
-          overflowY: 'scroll',
+          padding: 'clamp(1rem, 4vw, 2rem)',
+          textAlign: 'left',
           marginBottom: '2rem',
-          fontSize: '1.2rem',
-          fontFamily: 'monospace'
+          boxShadow: 'inset 5px 5px 0px rgba(0,0,0,0.1)'
         }}>
-          <p>By checking the box below, you (hereinafter referred to as "The Psycho") agree to the following terms with the creator of this website (hereinafter referred to as "The Mastermind"):</p>
-          <br/>
-          <ul>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', borderBottom: '4px solid black', paddingBottom: '0.5rem' }}>FINE PRINT</h3>
+          <p style={{ fontSize: '1.2rem', fontFamily: 'monospace', marginBottom: '1.5rem' }}>
+            By checking the box below, you (hereinafter referred to as "The Psycho") agree to the following terms with the creator of this website (hereinafter referred to as "The Mastermind"):
+          </p>
+          <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <li>1. You acknowledge that 3 years is too long to just be dating.</li>
             <li>2. You surrender all rights to complain about my farts, video games, and stupid jokes.</li>
             <li>3. You agree to an automatic upgrade from Girlfriend.exe to Wife.exe in the next fiscal year.</li>

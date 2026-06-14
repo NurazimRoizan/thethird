@@ -102,25 +102,25 @@ const SlotMachine = ({ onJackpot }) => {
 
       {jackpotHit && (
         <motion.div 
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: 'spring', bounce: 0.6 }}
-          className="brutal-box pink shake-it"
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 1000,
-            textAlign: 'center',
+          initial={{ scale: 0, rotate: -10 }}
+          animate={{ scale: 1, rotate: 5 }}
+          className="brutal-box cyan-bg"
+          style={{ 
+            position: 'absolute', 
+            top: '50%', 
+            left: '50%', 
+            x: '-50%',
+            y: '-50%',
             width: '90%',
-            maxWidth: '800px',
-            backgroundColor: 'var(--cyan-pierce)',
-            color: 'var(--bg-void)'
+            maxWidth: '600px',
+            padding: 'clamp(1.5rem, 5vw, 3rem)', 
+            zIndex: 50,
+            textAlign: 'center',
+            boxShadow: 'var(--shadow-brutal-pink)'
           }}
         >
-          <h1 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '1rem' }}>JACKPOT!</h1>
-          <h2 style={{ fontSize: '2rem', fontWeight: 900 }}>PREPARE FOR THE 1ST ANNIVERSARY NEXT YEAR, YOU UNGRATEFUL UCUK PLATYPUS.</h2>
+          <h1 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', fontWeight: 900, marginBottom: '1rem' }}>JACKPOT!</h1>
+          <h2 style={{ fontSize: 'clamp(1.2rem, 5vw, 2rem)', fontWeight: 900 }}>PREPARE FOR THE 1ST ANNIVERSARY NEXT YEAR, YOU UNGRATEFUL UCUK PLATYPUS.</h2>
         </motion.div>
       )}
 
