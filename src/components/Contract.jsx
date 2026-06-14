@@ -53,13 +53,13 @@ const Contract = () => {
         color: 'var(--bg-void)'
       }}
     >
-      <div className="brutal-box white-bg" style={{ maxWidth: '800px', width: '100%', padding: '3rem' }}>
-        <h2 style={{ fontSize: '3rem', marginBottom: '2rem', textAlign: 'center', textDecoration: 'underline' }}>TERMS & CONDITIONS: YEAR 4</h2>
+      <div className="brutal-box white-bg" style={{ maxWidth: '800px', width: '100%', padding: 'clamp(1.5rem, 5vw, 3rem)' }}>
+        <h2 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', marginBottom: '2rem', textAlign: 'center', textDecoration: 'underline' }}>TERMS & CONDITIONS: YEAR 4</h2>
         
         <div style={{
           backgroundColor: 'var(--white-pure)',
           border: 'var(--border-thick-black)',
-          padding: 'clamp(1rem, 4vw, 2rem)',
+          padding: '1rem',
           textAlign: 'left',
           marginBottom: '2rem',
           boxShadow: 'inset 5px 5px 0px rgba(0,0,0,0.1)'
@@ -76,7 +76,7 @@ const Contract = () => {
           </ul>
         </div>
 
-        <label style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.5rem', cursor: 'pointer', marginBottom: '2rem' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: 'clamp(1rem, 4vw, 1.5rem)', cursor: 'pointer', marginBottom: '2rem' }}>
           <input 
             type="checkbox" 
             checked={checked}
