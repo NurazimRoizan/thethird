@@ -155,8 +155,8 @@ const EvidenceRoom = () => {
             {!nuked && (
               <div style={{ position: 'absolute', top: '-20px', right: '-10px', zIndex: 10 }}>
                 <Sticker color="pink" rotate={8}>
-                  <span style={{ fontSize: '30px', lineHeight: 1 }}>🤡</span>
-                  <span className="font-marker ml-2 text-black font-bold text-lg">PSYCHO</span>
+                  <span style={{ fontSize: '30px', lineHeight: 1 }}>🫨</span>
+                  <span className="font-marker ml-2 text-black font-bold text-lg">KSI</span>
                 </Sticker>
               </div>
             )}
