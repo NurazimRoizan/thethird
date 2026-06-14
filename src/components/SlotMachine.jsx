@@ -5,6 +5,7 @@ const SlotMachine = ({ onJackpot }) => {
   const [spinning, setSpinning] = useState(false);
   const [results, setResults] = useState(['❓', '❓', '❓']);
   const [jackpotHit, setJackpotHit] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const icons = ['💀', '🔥', '💩', '💍', '🍕', '🤡'];
   const ringIcon = '💍';
@@ -30,6 +31,8 @@ const SlotMachine = ({ onJackpot }) => {
         setResults([ringIcon, ringIcon, ringIcon]);
         setSpinning(false);
         setJackpotHit(true);
+        setShowConfetti(true);
+        setTimeout(() => setShowConfetti(false), 3000);
         setTimeout(() => {
           onJackpot();
         }, 1500); // Give them a sec to process the banner before unlocking
@@ -125,7 +128,7 @@ const SlotMachine = ({ onJackpot }) => {
       )}
 
       {/* Confetti Explosion Effect via CSS / absolute divs */}
-      {jackpotHit && (
+      {showConfetti && (
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden', zIndex: 999 }}>
           {[...Array(50)].map((_, i) => (
             <motion.div
@@ -133,15 +136,17 @@ const SlotMachine = ({ onJackpot }) => {
               initial={{ 
                 x: '50vw', 
                 y: '50vh',
-                scale: 0
+                scale: 0,
+                opacity: 1
               }}
               animate={{ 
                 x: `${Math.random() * 100}vw`, 
                 y: `${Math.random() * 100}vh`,
                 scale: Math.random() * 2 + 1,
-                rotate: Math.random() * 360
+                rotate: Math.random() * 360,
+                opacity: [1, 1, 0]
               }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
+              transition={{ duration: 2.8, ease: "easeOut" }}
               style={{
                 position: 'absolute',
                 width: '20px',
