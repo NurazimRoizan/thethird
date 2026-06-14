@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Permanent+Marker&display=swap');
+
+:root {
+  --bg-void: #111111;
+  --cyan-pierce: #00ffff;
+  --pink-scream: #ff00ff;
+  --yellow-hazard: #ffff00;
+  --white-pure: #ffffff;
+  
+  --shadow-brutal-cyan: 6px 6px 0px var(--cyan-pierce);
+  --shadow-brutal-pink: 6px 6px 0px var(--pink-scream);
+  --shadow-brutal-yellow: 6px 6px 0px var(--yellow-hazard);
+  --shadow-brutal-white: 6px 6px 0px var(--white-pure);
+  --shadow-brutal-black: 6px 6px 0px var(--bg-void);
+
+  --border-thick: 4px solid var(--white-pure);
+  --border-thick-pink: 4px solid var(--pink-scream);
+  --border-thick-cyan: 4px solid var(--cyan-pierce);
+  --border-thick-yellow: 4px solid var(--yellow-hazard);
+  --border-thick-black: 4px solid var(--bg-void);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: crosshair;
+}
+
+html, body {
+  background-color: var(--bg-void);
+  color: var(--white-pure);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  font-weight: 900;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+  border-left: 2px solid var(--pink-scream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cyan-pierce);
+  border: 2px solid var(--bg-void);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--yellow-hazard);
+}
+
+/* Utilities */
+.font-marker {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.brutal-box {
+  background-color: var(--bg-void);
+  border: var(--border-thick);
+  padding: 2rem;
+  box-shadow: var(--shadow-brutal-white);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  position: relative;
+}
+
+.brutal-box.black-bg {
+  background-color: var(--bg-void);
+  color: var(--white-pure);
+}
+
+.brutal-box.white-bg {
+  background-color: var(--white-pure);
+  color: var(--bg-void);
+  border: var(--border-thick-black);
+  box-shadow: var(--shadow-brutal-black);
+}
+
+.brutal-box.pink {
+  border: var(--border-thick-pink);
+  box-shadow: var(--shadow-brutal-pink);
+}
+
+.brutal-box.cyan {
+  border: var(--border-thick-cyan);
+  box-shadow: var(--shadow-brutal-cyan);
+}
+
+.brutal-box.yellow {
+  border: var(--border-thick-black);
+  box-shadow: var(--shadow-brutal-black);
+  color: var(--bg-void);
+  background-color: var(--yellow-hazard);
+}
+
+.brutal-button {
+  background-color: var(--cyan-pierce);
+  color: var(--bg-void);
+  border: var(--border-thick-black);
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-brutal-pink);
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.brutal-button:hover {
+  background-color: var(--pink-scream);
+  box-shadow: var(--shadow-brutal-cyan);
+  transform: translate(-2px, -2px);
+}
+
+.brutal-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--bg-void);
+}
+
+/* Glitch Animation */
+@keyframes text-glitch {
+  0% { text-shadow: 2px 2px var(--pink-scream), -2px -2px var(--cyan-pierce); transform: translate(0); }
+  10% { text-shadow: -3px 0 var(--yellow-hazard), 3px 0 var(--cyan-pierce); transform: translate(-2px, 1px); }
+  20% { text-shadow: 2px -1px var(--pink-scream), -2px 2px var(--yellow-hazard); transform: translate(1px, -2px); }
+  30% { text-shadow: 2px 2px var(--pink-scream), -2px -2px var(--cyan-pierce); transform: translate(0); }
+  100% { text-shadow: 2px 2px var(--pink-scream), -2px -2px var(--cyan-pierce); transform: translate(0); }
+}
+
+.glitch-text {
+  animation: text-glitch 0.2s infinite;
+  display: inline-block;
+}
+
+/* Screen Shake */
+@keyframes violent-shake {
+  0% { transform: translate(2px, 2px) rotate(0deg); }
+  10% { transform: translate(-2px, -4px) rotate(-1deg); }
+  20% { transform: translate(-6px, 0px) rotate(1deg); }
+  30% { transform: translate(0px, 4px) rotate(0deg); }
+  40% { transform: translate(2px, -2px) rotate(1deg); }
+  50% { transform: translate(-2px, 4px) rotate(-1deg); }
+  60% { transform: translate(-6px, 2px) rotate(0deg); }
+  70% { transform: translate(4px, 2px) rotate(-1deg); }
+  80% { transform: translate(-2px, -2px) rotate(1deg); }
+  90% { transform: translate(2px, 4px) rotate(0deg); }
+  100% { transform: translate(2px, -4px) rotate(-1deg); }
+}
+
+.shake-it {
+  animation: violent-shake 0.3s infinite;
+}
+
+/* CRT Overlay for extra chaos */
+.crt-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
